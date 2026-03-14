@@ -89,6 +89,90 @@
     /* Footer Note */
     .footer-note { text-align: center; font-size: 11.5px; color: #888; margin-top: 18px; line-height: 1.6; }
 
+    /* ===== Responsive Design ===== */
+
+    /* Tablet: 481px – 768px */
+    @media (max-width: 768px) {
+      .page { padding: 22px 20px 30px; margin: 12px auto; }
+      .shopee-icon { width: 40px; height: 40px; }
+      .shopee-icon svg { width: 26px; height: 26px; }
+      .shopee-text { font-size: 30px; }
+      .section-title { font-size: 15px; }
+      .info-box { font-size: 12.5px; padding: 12px 14px; }
+      .info-box .row { flex-direction: column; gap: 4px; }
+      .order-meta { flex-wrap: wrap; }
+      .order-meta .col { flex: 1 1 45%; border-right: none; border-bottom: 1px solid #ccc; padding: 8px 12px; }
+      .order-meta .col:nth-child(odd) { border-right: 1px solid #ccc; }
+      .order-meta .col:nth-last-child(-n+2) { border-bottom: none; }
+      .items-table { font-size: 12px; }
+      .items-table th { padding: 6px 8px; font-size: 11.5px; }
+      .items-table td { padding: 5px 6px; }
+      .edit-input.input-name { min-width: 120px; }
+      .edit-input.input-price { width: 80px; }
+      .edit-input.input-qty { width: 50px; }
+      .payment-box { padding: 16px 20px 18px; max-width: 100%; }
+      .payment-total .pvalue { font-size: 20px; }
+    }
+
+    /* Mobile: up to 480px */
+    @media (max-width: 480px) {
+      body { font-size: 13px; }
+      .page { padding: 14px 12px 22px; margin: 0; border-radius: 0; box-shadow: none; min-height: 100vh; }
+      .shopee-header { margin-bottom: 12px; }
+      .shopee-icon { width: 34px; height: 34px; border-radius: 8px; }
+      .shopee-icon svg { width: 22px; height: 22px; }
+      .shopee-text { font-size: 26px; }
+      .section-title { font-size: 14px; margin-bottom: 8px; }
+
+      /* Info box stacks vertically */
+      .info-box { font-size: 12px; padding: 10px 12px; line-height: 1.6; }
+      .info-box .row { flex-direction: column; gap: 4px; }
+      .info-box .address { font-size: 11.5px; word-break: break-word; }
+
+      /* Order meta: 2-column grid */
+      .order-meta { flex-wrap: wrap; font-size: 12px; }
+      .order-meta .col { flex: 1 1 48%; padding: 8px 10px; }
+      .order-meta .col-header { font-size: 11px; }
+      .order-meta .col-value { font-size: 11.5px; }
+
+      /* Table: horizontally scrollable */
+      .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 4px; }
+      .items-table { font-size: 11.5px; min-width: 520px; }
+      .items-table th { padding: 6px 6px; font-size: 11px; white-space: nowrap; }
+      .items-table td { padding: 4px 5px; }
+      .edit-input { font-size: 12px; padding: 4px 5px; }
+      .edit-input.input-name { min-width: 140px; }
+      .edit-input.input-price { width: 75px; }
+      .edit-input.input-qty { width: 45px; }
+
+      /* Subtotal row */
+      .subtotal-row { font-size: 13px; gap: 16px; }
+      .total-qty { font-size: 11px; margin-bottom: 16px; }
+
+      /* Payment box full-width */
+      .payment-box { max-width: 100%; padding: 14px 14px 16px; }
+      .payment-row .plabel, .payment-row .pvalue { font-size: 12px; }
+      .input-pay { width: 90px; font-size: 12px; padding: 3px 5px; }
+      .payment-total .plabel { font-size: 13px; }
+      .payment-total .pvalue { font-size: 18px; }
+
+      /* Button sizing for touch */
+      .btn-action { width: 32px; height: 32px; font-size: 18px; }
+      .btn-add-row { padding: 9px 16px; font-size: 13px; }
+
+      /* Footer */
+      .footer-note { font-size: 10.5px; margin-top: 14px; }
+    }
+
+    /* Very small screens: under 360px */
+    @media (max-width: 360px) {
+      .page { padding: 10px 8px 18px; }
+      .shopee-text { font-size: 22px; }
+      .order-meta .col { flex: 1 1 100%; border-right: none; border-bottom: 1px solid #ccc; }
+      .order-meta .col:last-child { border-bottom: none; }
+      .payment-total .pvalue { font-size: 16px; }
+    }
+
     /* Print */
     @media print {
       body { background: #fff; }
@@ -150,6 +234,7 @@
 
     <!-- Rincian Pesanan -->
     <div class="section-title">Rincian Pesanan</div>
+    <div class="table-wrap">
     <table class="items-table" id="itemsTable">
       <thead>
         <tr>
@@ -163,6 +248,7 @@
       </thead>
       <tbody id="itemsBody"></tbody>
     </table>
+    </div>
     <div class="table-actions">
       <button class="btn-add-row" onclick="addRow()">+ Tambah Produk</button>
     </div>

@@ -239,7 +239,7 @@
           <select class="meta-input" id="selectShipping">
             <option value="Regular">Regular</option>
             <option value="Instant">Instant</option>
-            <option value="Sameday">Sameday</option>
+            <option value="Same Day">Same Day</option>
           </select>
         </div>
       </div>
@@ -416,7 +416,7 @@
 
     renderRows();
 
-    var shippingRates = { 'Regular': 12000, 'Instant': 18000, 'Sameday': 16500 };
+    var shippingRates = { 'Regular': 12000, 'Instant': 18000, 'Same Day': 16500 };
     document.getElementById('selectShipping').addEventListener('change', function() {
       var rate = shippingRates[this.value] || 0;
       document.getElementById('inputShipping').value = dotFormat(rate);

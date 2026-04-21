@@ -9,38 +9,31 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; color: #333; }
     .page { max-width: 750px; margin: 20px auto; background: #fff; padding: 30px 35px 40px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-
     .pdf-bar { max-width: 750px; margin: 16px auto 0; display: flex; justify-content: flex-end; padding: 0 4px; }
     .btn-save-pdf { display: inline-flex; align-items: center; gap: 8px; background: #ee4d2d; color: #fff; border: none; border-radius: 6px; padding: 10px 20px; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px rgba(238,77,45,0.35); transition: background 0.18s, box-shadow 0.18s, transform 0.1s; letter-spacing: 0.2px; }
     .btn-save-pdf:hover { background: #d94425; box-shadow: 0 4px 14px rgba(238,77,45,0.4); }
     .btn-save-pdf:active { transform: scale(0.97); }
     .btn-save-pdf svg { width: 18px; height: 18px; flex-shrink: 0; }
-
     .shopee-header { text-align: center; margin-bottom: 18px; }
     .shopee-logo { display: inline-flex; align-items: center; justify-content: center; gap: 6px; }
     .shopee-icon { width: 48px; height: 48px; background: #ee4d2d; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
     .shopee-icon svg { width: 30px; height: 30px; }
     .shopee-text { font-size: 38px; font-weight: 700; color: #ee4d2d; letter-spacing: -0.5px; }
-
     .section-title { font-size: 17px; font-weight: 600; margin-bottom: 10px; color: #222; }
-
     .info-box { border: 1px solid #ccc; padding: 14px 16px; margin-bottom: 20px; font-size: 13.5px; line-height: 1.7; }
     .info-box .row { display: flex; justify-content: space-between; flex-wrap: wrap; }
     .info-box .label { font-weight: 700; }
     .info-box .address { margin-top: 2px; }
-
     .order-meta { display: flex; border: 1px solid #ccc; margin-bottom: 20px; font-size: 13.5px; }
     .order-meta .col { flex: 1; padding: 10px 14px; }
     .order-meta .col:not(:last-child) { border-right: 1px solid #ccc; }
     .order-meta .col-header { font-weight: 700; margin-bottom: 4px; font-size: 13px; }
     .order-meta .col-value { font-size: 13px; }
-
     .items-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 13px; }
     .items-table th { background: #f7f7f7; border: 1px solid #ccc; padding: 8px 10px; text-align: left; font-weight: 600; font-size: 12.5px; }
     .items-table td { border: 1px solid #ccc; padding: 6px 8px; vertical-align: middle; }
     .items-table td.num { text-align: center; }
     .items-table td.price { text-align: right; white-space: nowrap; font-weight: 500; }
-
     .edit-input { width: 100%; border: 1px solid transparent; background: transparent; font-family: inherit; font-size: 13px; padding: 5px 6px; border-radius: 4px; color: #333; outline: none; transition: border-color 0.2s, background 0.2s; }
     .edit-input:hover { border-color: #ddd; background: #fafafa; }
     .edit-input:focus { border-color: #ee4d2d; background: #fff4f0; box-shadow: 0 0 0 2px rgba(238,77,45,0.1); }
@@ -48,7 +41,6 @@
     .edit-input.input-price, .edit-input.input-qty { text-align: right; width: 90px; }
     .edit-input.input-qty { width: 60px; text-align: center; }
     .edit-input.invalid { border-color: #e74c3c; background: #fef0ef; }
-
     .btn-action { border: none; cursor: pointer; border-radius: 4px; font-size: 16px; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.1s; }
     .btn-action:active { transform: scale(0.92); }
     .btn-add { background: #ee4d2d; color: #fff; }
@@ -58,17 +50,14 @@
     .table-actions { display: flex; justify-content: flex-start; margin-bottom: 14px; gap: 8px; align-items: center; }
     .btn-add-row { display: inline-flex; align-items: center; gap: 5px; background: #ee4d2d; color: #fff; border: none; border-radius: 5px; padding: 7px 14px; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
     .btn-add-row:hover { background: #d94425; }
-
     .input-pay { width: 110px; text-align: right; border: 1px solid transparent; background: transparent; font-family: inherit; font-size: 13px; padding: 4px 6px; border-radius: 4px; color: #333; outline: none; transition: border-color 0.2s, background 0.2s; }
     .input-pay:hover { border-color: #ddd; background: #fff; }
     .input-pay:focus { border-color: #ee4d2d; background: #fff4f0; box-shadow: 0 0 0 2px rgba(238,77,45,0.1); }
     .input-discount { color: #e74c3c; }
-
     .subtotal-row { display: flex; justify-content: flex-end; align-items: baseline; gap: 30px; font-size: 15px; margin-bottom: 3px; margin-top: 6px; }
     .subtotal-row .label { font-weight: 700; }
     .subtotal-row .value { font-weight: 700; }
     .total-qty { text-align: right; font-size: 12px; font-weight: 700; color: #333; margin-bottom: 24px; }
-
     .payment-box { background: #f5f5f5; border: 1px solid #ddd; border-radius: 2px; padding: 20px 28px 22px; max-width: 400px; margin-left: auto; margin-right: 0; font-size: 13.5px; }
     .payment-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; }
     .payment-row .plabel { color: #333; font-weight: 400; font-size: 13px; }
@@ -78,16 +67,13 @@
     .payment-total { display: flex; justify-content: space-between; align-items: center; padding-top: 6px; }
     .payment-total .plabel { font-weight: 700; font-size: 15px; color: #222; }
     .payment-total .pvalue { font-weight: 700; font-size: 24px; color: #ee4d2d; letter-spacing: -0.3px; }
-
     .footer-note { text-align: right; font-size: 11.5px; color: #888; margin-top: 18px; line-height: 1.6; }
-
     .meta-input { border: 1px solid transparent; background: transparent; font-family: inherit; font-size: 13px; padding: 2px 4px; border-radius: 4px; color: #333; outline: none; transition: border-color 0.2s, background 0.2s; width: 100%; }
     .meta-input:hover { border-color: #ddd; background: #fafafa; }
     .meta-input:focus { border-color: #ee4d2d; background: #fff4f0; box-shadow: 0 0 0 2px rgba(238,77,45,0.1); }
     .order-code-wrap { display: flex; align-items: center; gap: 4px; }
     .btn-random { border: none; cursor: pointer; background: #ee4d2d; color: #fff; border-radius: 4px; font-size: 11px; padding: 3px 7px; font-weight: 600; transition: background 0.15s; }
     .btn-random:hover { background: #d94425; }
-
     @media (max-width: 768px) {
       .page { padding: 22px 20px 30px; margin: 12px auto; }
       .shopee-icon { width: 40px; height: 40px; }
@@ -152,7 +138,6 @@
       .order-meta .col:last-child { border-bottom: none; }
       .payment-total .pvalue { font-size: 16px; }
     }
-
     @media print {
       .pdf-bar, .btn-save-pdf, .btn-random, .btn-add-row, .table-actions, .btn-action, .btn-del { display: none !important; }
       html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
@@ -174,7 +159,6 @@
   </style>
 </head>
 <body>
-
   <div class="pdf-bar">
     <button class="btn-save-pdf" onclick="saveAsPDF()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -186,7 +170,6 @@
       Simpan sebagai PDF
     </button>
   </div>
-
   <div class="page" id="invoicePage">
     <div class="shopee-header">
       <div class="shopee-logo">
@@ -198,9 +181,7 @@
         <span class="shopee-text">Shopee</span>
       </div>
     </div>
-
     <div class="section-title">Nota Pesanan</div>
-
     <div class="info-box">
       <div class="row">
         <div><span class="label">Nama Pembeli:</span> mbafirmansyah</div>
@@ -214,7 +195,6 @@
         <span class="label">No. Handphone Pembeli:</span> 6287888000575
       </div>
     </div>
-
     <div class="order-meta">
       <div class="col">
         <div class="col-header">No. Pesanan</div>
@@ -244,7 +224,6 @@
         </div>
       </div>
     </div>
-
     <div class="section-title">Rincian Pesanan</div>
     <div class="table-wrap">
       <table class="items-table" id="itemsTable">
@@ -264,13 +243,11 @@
     <div class="table-actions">
       <button class="btn-add-row" onclick="addRow()">+ Tambah Produk</button>
     </div>
-
     <div class="subtotal-row">
       <span class="label">Subtotal</span>
       <span class="value" id="grandSubtotal">Rp0</span>
     </div>
     <div class="total-qty">Total Kuantitas (Aktif) <span id="totalQty">0</span> produk</div>
-
     <div class="payment-box">
       <div class="payment-row">
         <span class="plabel">Subtotal Pesanan</span>
@@ -288,34 +265,33 @@
         <span class="plabel">Total Diskon Pengiriman</span>
         <span class="pvalue"><input class="edit-input input-pay input-discount" id="inputDiscount" type="text" value="12.000" inputmode="numeric"></span>
       </div>
+      <div class="payment-row discount">
+        <span class="plabel">Diskon Voucher Shopee</span>
+        <span class="pvalue"><input class="edit-input input-pay input-discount" id="inputVoucherDiscount" type="text" value="0" inputmode="numeric"></span>
+      </div>
       <hr class="payment-divider">
       <div class="payment-total">
         <span class="plabel">Total Pembayaran</span>
         <span class="pvalue" id="payTotal">Rp0</span>
       </div>
     </div>
-
     <div class="footer-note">
       Biaya-biaya yang ditagihkan oleh Shopee (jika<br>ada) sudah termasuk PPN
     </div>
   </div>
-
   <script>
     function saveAsPDF() {
       if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
       setTimeout(function() { window.print(); }, 80);
     }
-
     function dotFormat(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
     function parseNumber(s) { return parseInt(String(s).replace(/\./g, ''), 10); }
-
     function randomizeCode() {
       var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
       var code = '';
       for (var i = 0; i < 8; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
       document.getElementById('orderNumberRandom').textContent = code;
     }
-
     function updateOrderPrefix() {
       var val = document.getElementById('inputDate').value.trim();
       var parts = val.split('/');
@@ -328,12 +304,52 @@
     }
     document.getElementById('inputDate').addEventListener('input', updateOrderPrefix);
     document.getElementById('inputDate').addEventListener('blur', updateOrderPrefix);
-
+    
+    // Fungsi untuk mendapatkan tanggal kerja (hindari Minggu dan tanggal merah)
+    function getWorkingDate() {
+      // Daftar tanggal merah Indonesia 2025-2027 (format: 'YYYY-MM-DD')
+      var holidays = [
+        // 2025
+        '2025-01-01','2025-01-27','2025-01-28','2025-01-29','2025-03-28','2025-03-29','2025-03-30','2025-03-31','2025-04-01','2025-04-18','2025-05-01','2025-05-12','2025-05-29','2025-06-01','2025-06-06','2025-06-07','2025-08-17','2025-09-05','2025-12-25','2025-12-26',
+        // 2026
+        '2026-01-01','2026-01-15','2026-01-16','2026-01-17','2026-03-17','2026-03-18','2026-03-19','2026-03-20','2026-03-21','2026-04-03','2026-05-01','2026-05-14','2026-05-18','2026-05-26','2026-05-27','2026-08-17','2026-08-25','2026-12-25',
+        // 2027
+        '2027-01-01','2027-01-04','2027-01-05','2027-01-06','2027-03-08','2027-03-09','2027-03-10','2027-03-11','2027-03-12','2027-03-26','2027-05-01','2027-05-03','2027-05-13','2027-05-16','2027-05-17','2027-08-14','2027-08-17','2027-12-25'
+      ];
+      
+      var date = new Date();
+      date.setDate(date.getDate() - 1); // Mulai dari kemarin
+      
+      // Loop sampai dapat hari kerja (bukan Minggu dan bukan tanggal merah)
+      while (true) {
+        var dayOfWeek = date.getDay(); // 0 = Minggu
+        var dateStr = date.getFullYear() + '-' + 
+                      String(date.getMonth() + 1).padStart(2, '0') + '-' + 
+                      String(date.getDate()).padStart(2, '0');
+        
+        if (dayOfWeek !== 0 && holidays.indexOf(dateStr) === -1) {
+          break; // Hari kerja ditemukan
+        }
+        date.setDate(date.getDate() - 1); // Mundur 1 hari lagi
+      }
+      
+      var dd = String(date.getDate()).padStart(2, '0');
+      var mm = String(date.getMonth() + 1).padStart(2, '0');
+      var yy = String(date.getFullYear()).slice(-2);
+      return dd + '/' + mm + '/' + yy;
+    }
+    
+    // Set tanggal otomatis saat load
+    (function() {
+      var autoDate = getWorkingDate();
+      document.getElementById('inputDate').value = autoDate;
+      updateOrderPrefix();
+    })();
+    
     var items = [
       { name: 'Nama Produk', price: 89000, qty: 2, active: true },
       { name: 'Nama Produk', price: 89000, qty: 1, active: true }
     ];
-
     function renderRows() {
       var tbody = document.getElementById('itemsBody');
       tbody.innerHTML = '';
@@ -353,19 +369,15 @@
       bindItemInputs();
       recalculate();
     }
-
     function escHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-
     function addRow() {
       items.push({ name: 'Nama Produk', price: 0, qty: 1, active: true });
       renderRows();
     }
-
     function delRow(idx) {
       items[idx].active = false;
       renderRows();
     }
-
     function bindItemInputs() {
       document.querySelectorAll('#itemsBody .edit-input').forEach(function(el) {
         el.addEventListener('input', function() {
@@ -382,7 +394,6 @@
         });
       });
     }
-
     function recalculate() {
       var subtotal = 0, qty = 0;
       items.forEach(function(item, i) {
@@ -396,16 +407,15 @@
       document.getElementById('grandSubtotal').textContent = 'Rp' + dotFormat(subtotal);
       document.getElementById('totalQty').textContent = qty;
       document.getElementById('paySubtotal').textContent = 'Rp' + dotFormat(subtotal);
-
       var shipping = parseNumber(document.getElementById('inputShipping').value) || 0;
       var service = parseNumber(document.getElementById('inputService').value) || 0;
       var discount = parseNumber(document.getElementById('inputDiscount').value) || 0;
-      var total = subtotal + shipping + service - discount;
+      var voucherDiscount = parseNumber(document.getElementById('inputVoucherDiscount').value) || 0;
+      var total = subtotal + shipping + service - discount - voucherDiscount;
       if (total < 0) total = 0;
       document.getElementById('payTotal').textContent = 'Rp' + dotFormat(total);
     }
-
-    ['inputShipping', 'inputService', 'inputDiscount'].forEach(function(id) {
+    ['inputShipping', 'inputService', 'inputDiscount', 'inputVoucherDiscount'].forEach(function(id) {
       var el = document.getElementById(id);
       el.addEventListener('input', function() { recalculate(); });
       el.addEventListener('blur', function() {
@@ -413,9 +423,7 @@
         if (!isNaN(num)) this.value = dotFormat(num);
       });
     });
-
     renderRows();
-
     var shippingRates = { 'Regular': 12000, 'Instant': 18000, 'Same Day': 16500 };
     document.getElementById('selectShipping').addEventListener('change', function() {
       var rate = shippingRates[this.value] || 0;

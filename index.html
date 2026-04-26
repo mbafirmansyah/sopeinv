@@ -8,7 +8,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; color: #333; }
-    .page { max-width: 750px; margin: 20px auto; background: #fff; padding: 30px 35px 40px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .page { max-width: 750px; margin: 0 auto 20px; background: #fff; padding: 30px 35px 40px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
     .pdf-bar { max-width: 750px; margin: 16px auto 0; display: flex; justify-content: flex-end; padding: 0 4px; }
     .btn-save-pdf { display: inline-flex; align-items: center; gap: 8px; background: #ee4d2d; color: #fff; border: none; border-radius: 6px; padding: 10px 20px; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 2px 8px rgba(238,77,45,0.35); transition: background 0.18s, box-shadow 0.18s, transform 0.1s; letter-spacing: 0.2px; }
     .btn-save-pdf:hover { background: #d94425; box-shadow: 0 4px 14px rgba(238,77,45,0.4); }
@@ -74,8 +74,21 @@
     .order-code-wrap { display: flex; align-items: center; gap: 4px; }
     .btn-random { border: none; cursor: pointer; background: #ee4d2d; color: #fff; border-radius: 4px; font-size: 11px; padding: 3px 7px; font-weight: 600; transition: background 0.15s; }
     .btn-random:hover { background: #d94425; }
+
+    /* === TAB SYSTEM === */
+    .tabs-bar { max-width: 750px; margin: 0 auto; display: flex; align-items: flex-end; gap: 0; padding: 0 4px; flex-wrap: wrap; }
+    .tab-item { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; font-size: 13px; font-weight: 600; background: #e8e8e8; color: #666; border: 1px solid #ccc; border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; transition: background 0.15s, color 0.15s; position: relative; bottom: -1px; user-select: none; }
+    .tab-item:hover { background: #f0f0f0; color: #444; }
+    .tab-item.active { background: #fff; color: #ee4d2d; border-color: #ccc; border-bottom: 1px solid #fff; z-index: 2; }
+    .tab-close { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 13px; line-height: 1; color: #999; cursor: pointer; transition: background 0.15s, color 0.15s; }
+    .tab-close:hover { background: #fee; color: #e74c3c; }
+    .tab-item.active .tab-close { color: #ee4d2d; }
+    .tab-item.active .tab-close:hover { background: #fee; color: #e74c3c; }
+    .tab-add { display: inline-flex; align-items: center; gap: 4px; padding: 9px 16px; font-size: 13px; font-weight: 700; background: #ee4d2d; color: #fff; border: none; border-radius: 8px 8px 0 0; cursor: pointer; transition: background 0.15s; position: relative; bottom: -1px; }
+    .tab-add:hover { background: #d94425; }
+
     @media (max-width: 768px) {
-      .page { padding: 22px 20px 30px; margin: 12px auto; }
+      .page { padding: 22px 20px 30px; margin: 0 auto 12px; }
       .shopee-icon { width: 40px; height: 40px; }
       .shopee-icon svg { width: 26px; height: 26px; }
       .shopee-text { font-size: 30px; }
@@ -130,6 +143,8 @@
       .footer-note { font-size: 10.5px; margin-top: 14px; text-align: center; }
       .pdf-bar { margin: 10px auto 0; padding: 0 12px; }
       .btn-save-pdf { width: 100%; justify-content: center; }
+      .tab-item { padding: 7px 12px; font-size: 12px; }
+      .tab-add { padding: 7px 12px; font-size: 12px; }
     }
     @media (max-width: 360px) {
       .page { padding: 10px 8px 18px; }
@@ -138,8 +153,39 @@
       .order-meta .col:last-child { border-bottom: none; }
       .payment-total .pvalue { font-size: 16px; }
     }
+    /* === ACCUMULATION SECTION === */
+    .accum-section { max-width: 750px; margin: 30px auto 20px; background: #fff; padding: 30px 35px 40px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); border-top: 4px solid #ee4d2d; }
+    .accum-title { font-size: 20px; font-weight: 700; color: #ee4d2d; margin-bottom: 6px; }
+    .accum-subtitle { font-size: 12.5px; color: #888; margin-bottom: 18px; }
+    .accum-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 13px; }
+    .accum-table th { background: #ee4d2d; color: #fff; border: 1px solid #d94425; padding: 8px 10px; text-align: left; font-weight: 600; font-size: 12.5px; }
+    .accum-table td { border: 1px solid #ccc; padding: 7px 10px; vertical-align: middle; }
+    .accum-table td.num { text-align: center; }
+    .accum-table td.price { text-align: right; white-space: nowrap; font-weight: 500; }
+    .accum-table tr:nth-child(even) { background: #fafafa; }
+    .accum-table tr.nota-header { background: #fff4f0; }
+    .accum-table tr.nota-header td { font-weight: 700; color: #ee4d2d; font-size: 12.5px; border-bottom: 2px solid #ee4d2d; }
+    .accum-summary { background: #f5f5f5; border: 1px solid #ddd; border-radius: 2px; padding: 20px 28px 22px; margin-top: 10px; }
+    .accum-summary .sum-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; font-size: 13.5px; }
+    .accum-summary .sum-row .slabel { color: #333; font-weight: 400; }
+    .accum-summary .sum-row .svalue { font-weight: 600; text-align: right; }
+    .accum-summary .sum-divider { border: none; border-top: 1px solid #ccc; margin: 10px 0 8px; }
+    .accum-summary .sum-total { display: flex; justify-content: space-between; align-items: center; padding-top: 6px; }
+    .accum-summary .sum-total .slabel { font-weight: 700; font-size: 16px; color: #222; }
+    .accum-summary .sum-total .svalue { font-weight: 700; font-size: 26px; color: #ee4d2d; }
+    @media (max-width: 480px) {
+      .accum-section { padding: 14px 12px 22px; margin: 12px auto; }
+      .accum-title { font-size: 17px; }
+      .accum-table { font-size: 11.5px; min-width: 520px; }
+      .accum-summary { padding: 14px 14px 16px; }
+      .accum-summary .sum-total .svalue { font-size: 20px; }
+    }
+
     @media print {
-      .pdf-bar, .btn-save-pdf, .btn-random, .btn-add-row, .table-actions, .btn-action, .btn-del { display: none !important; }
+      .pdf-bar, .btn-save-pdf, .btn-random, .btn-add-row, .table-actions, .btn-action, .btn-del, .tabs-bar, .tab-item, .tab-add { display: none !important; }
+      .accum-section { box-shadow: none !important; margin: 20px auto !important; page-break-before: always; }
+      .accum-table th { background: #ee4d2d !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .accum-table tr.nota-header { background: #fff4f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; }
       .page { box-shadow: none !important; margin: 0 !important; padding: 18px 24px 24px !important; max-width: 100% !important; width: 100% !important; }
       input.edit-input, input.meta-input, input.input-pay { border: none !important; background: transparent !important; box-shadow: none !important; -webkit-appearance: none; appearance: none; padding: 0 !important; color: #333 !important; pointer-events: none; }
@@ -170,6 +216,13 @@
       Simpan sebagai PDF
     </button>
   </div>
+
+  <!-- TAB BAR -->
+  <div class="tabs-bar" id="tabsBar">
+    <div class="tab-item active" data-tab="0" onclick="switchTab(0)">Nota 1</div>
+    <button class="tab-add" onclick="addNewTab()">+ Nota Baru</button>
+  </div>
+
   <div class="page" id="invoicePage">
     <div class="shopee-header">
       <div class="shopee-logo">
@@ -279,18 +332,48 @@
       Biaya-biaya yang ditagihkan oleh Shopee (jika<br>ada) sudah termasuk PPN
     </div>
   </div>
+
+  <!-- ACCUMULATION SECTION -->
+  <div class="accum-section" id="accumSection" style="display:none;">
+    <div class="accum-title">Akumulasi Semua Nota</div>
+    <div class="accum-subtitle" id="accumSubtitle">Total 0 nota</div>
+    <div class="table-wrap">
+      <table class="accum-table">
+        <thead>
+          <tr>
+            <th style="width:36px;">No.</th>
+            <th>Nota</th>
+            <th>Produk</th>
+            <th style="width:100px;">Harga</th>
+            <th style="width:60px;">Qty</th>
+            <th style="width:110px;">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody id="accumBody"></tbody>
+      </table>
+    </div>
+    <div class="accum-summary" id="accumSummary"></div>
+  </div>
+
   <script>
+    /* === ORIGINAL HELPERS === */
     function saveAsPDF() {
       if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
       setTimeout(function() { window.print(); }, 80);
     }
     function dotFormat(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); }
     function parseNumber(s) { return parseInt(String(s).replace(/\./g, ''), 10); }
-    function randomizeCode() {
+
+    function generateRandomCode() {
       var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
       var code = '';
       for (var i = 0; i < 8; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
+      return code;
+    }
+    function randomizeCode() {
+      var code = generateRandomCode();
       document.getElementById('orderNumberRandom').textContent = code;
+      tabs[activeTab].orderRandom = code;
     }
     function updateOrderPrefix() {
       var val = document.getElementById('inputDate').value.trim();
@@ -300,56 +383,142 @@
         var mm = parts[1].padStart(2, '0');
         var yy = parts[2].padStart(2, '0');
         document.getElementById('orderNumberPrefix').textContent = yy + mm + dd;
+        tabs[activeTab].orderPrefix = yy + mm + dd;
       }
     }
-    document.getElementById('inputDate').addEventListener('input', updateOrderPrefix);
-    document.getElementById('inputDate').addEventListener('blur', updateOrderPrefix);
-    
-    // Fungsi untuk mendapatkan tanggal kerja (hindari Minggu dan tanggal merah)
+
     function getWorkingDate() {
-      // Daftar tanggal merah Indonesia 2025-2027 (format: 'YYYY-MM-DD')
       var holidays = [
-        // 2025
         '2025-01-01','2025-01-27','2025-01-28','2025-01-29','2025-03-28','2025-03-29','2025-03-30','2025-03-31','2025-04-01','2025-04-18','2025-05-01','2025-05-12','2025-05-29','2025-06-01','2025-06-06','2025-06-07','2025-08-17','2025-09-05','2025-12-25','2025-12-26',
-        // 2026
         '2026-01-01','2026-01-15','2026-01-16','2026-01-17','2026-03-17','2026-03-18','2026-03-19','2026-03-20','2026-03-21','2026-04-03','2026-05-01','2026-05-14','2026-05-18','2026-05-26','2026-05-27','2026-08-17','2026-08-25','2026-12-25',
-        // 2027
         '2027-01-01','2027-01-04','2027-01-05','2027-01-06','2027-03-08','2027-03-09','2027-03-10','2027-03-11','2027-03-12','2027-03-26','2027-05-01','2027-05-03','2027-05-13','2027-05-16','2027-05-17','2027-08-14','2027-08-17','2027-12-25'
       ];
-      
       var date = new Date();
-      date.setDate(date.getDate() - 1); // Mulai dari kemarin
-      
-      // Loop sampai dapat hari kerja (bukan Minggu dan bukan tanggal merah)
+      date.setDate(date.getDate() - 1);
       while (true) {
-        var dayOfWeek = date.getDay(); // 0 = Minggu
-        var dateStr = date.getFullYear() + '-' + 
-                      String(date.getMonth() + 1).padStart(2, '0') + '-' + 
-                      String(date.getDate()).padStart(2, '0');
-        
-        if (dayOfWeek !== 0 && holidays.indexOf(dateStr) === -1) {
-          break; // Hari kerja ditemukan
-        }
-        date.setDate(date.getDate() - 1); // Mundur 1 hari lagi
+        var dayOfWeek = date.getDay();
+        var dateStr = date.getFullYear() + '-' +
+                       String(date.getMonth() + 1).padStart(2, '0') + '-' +
+                       String(date.getDate()).padStart(2, '0');
+        if (dayOfWeek !== 0 && holidays.indexOf(dateStr) === -1) break;
+        date.setDate(date.getDate() - 1);
       }
-      
       var dd = String(date.getDate()).padStart(2, '0');
       var mm = String(date.getMonth() + 1).padStart(2, '0');
       var yy = String(date.getFullYear()).slice(-2);
       return dd + '/' + mm + '/' + yy;
     }
-    
-    // Set tanggal otomatis saat load
-    (function() {
+
+    /* === TAB SYSTEM === */
+    var tabs = [];
+    var activeTab = 0;
+    var tabCounter = 0;
+
+    function createDefaultTabState() {
       var autoDate = getWorkingDate();
-      document.getElementById('inputDate').value = autoDate;
-      updateOrderPrefix();
-    })();
-    
-    var items = [
-      { name: 'Nama Produk', price: 89000, qty: 2, active: true },
-      { name: 'Nama Produk', price: 89000, qty: 1, active: true }
-    ];
+      var parts = autoDate.split('/');
+      var prefix = parts[2].padStart(2,'0') + parts[1].padStart(2,'0') + parts[0].padStart(2,'0');
+      return {
+        items: [
+          { name: 'Nama Produk', price: 89000, qty: 2, active: true },
+          { name: 'Nama Produk', price: 89000, qty: 1, active: true }
+        ],
+        date: autoDate,
+        orderPrefix: prefix,
+        orderRandom: generateRandomCode(),
+        shipping: '12.000',
+        service: '3.000',
+        discount: '12.000',
+        voucherDiscount: '0',
+        shippingMethod: 'Regular'
+      };
+    }
+
+    function saveCurrentTab() {
+      if (!tabs[activeTab]) return;
+      var t = tabs[activeTab];
+      t.items = JSON.parse(JSON.stringify(items));
+      t.date = document.getElementById('inputDate').value;
+      t.orderPrefix = document.getElementById('orderNumberPrefix').textContent;
+      t.orderRandom = document.getElementById('orderNumberRandom').textContent;
+      t.shipping = document.getElementById('inputShipping').value;
+      t.service = document.getElementById('inputService').value;
+      t.discount = document.getElementById('inputDiscount').value;
+      t.voucherDiscount = document.getElementById('inputVoucherDiscount').value;
+      t.shippingMethod = document.getElementById('selectShipping').value;
+    }
+
+    function loadTab(idx) {
+      var t = tabs[idx];
+      items = JSON.parse(JSON.stringify(t.items));
+      document.getElementById('inputDate').value = t.date;
+      document.getElementById('orderNumberPrefix').textContent = t.orderPrefix;
+      document.getElementById('orderNumberRandom').textContent = t.orderRandom;
+      document.getElementById('inputShipping').value = t.shipping;
+      document.getElementById('inputService').value = t.service;
+      document.getElementById('inputDiscount').value = t.discount;
+      document.getElementById('inputVoucherDiscount').value = t.voucherDiscount;
+      document.getElementById('selectShipping').value = t.shippingMethod;
+      renderRows();
+    }
+
+    function renderTabs() {
+      var bar = document.getElementById('tabsBar');
+      bar.innerHTML = '';
+      tabs.forEach(function(t, i) {
+        var div = document.createElement('div');
+        div.className = 'tab-item' + (i === activeTab ? ' active' : '');
+        div.setAttribute('data-tab', i);
+        var nameSpan = document.createElement('span');
+        nameSpan.textContent = 'Nota ' + (i + 1);
+        nameSpan.onclick = function(e) { switchTab(i); };
+        div.appendChild(nameSpan);
+        if (tabs.length > 1) {
+          var closeBtn = document.createElement('span');
+          closeBtn.className = 'tab-close';
+          closeBtn.innerHTML = '&#10005;';
+          closeBtn.onclick = function(e) { e.stopPropagation(); closeTab(i); };
+          div.appendChild(closeBtn);
+        }
+        bar.appendChild(div);
+      });
+      var addBtn = document.createElement('button');
+      addBtn.className = 'tab-add';
+      addBtn.textContent = '+ Nota Baru';
+      addBtn.onclick = addNewTab;
+      bar.appendChild(addBtn);
+    }
+
+    function switchTab(idx) {
+      if (idx === activeTab) return;
+      saveCurrentTab();
+      activeTab = idx;
+      loadTab(idx);
+      renderTabs();
+    }
+
+    function addNewTab() {
+      saveCurrentTab();
+      tabs.push(createDefaultTabState());
+      activeTab = tabs.length - 1;
+      loadTab(activeTab);
+      renderTabs();
+    }
+
+    function closeTab(idx) {
+      if (tabs.length <= 1) return;
+      tabs.splice(idx, 1);
+      if (activeTab >= tabs.length) activeTab = tabs.length - 1;
+      else if (activeTab > idx) activeTab--;
+      else if (activeTab === idx) activeTab = Math.min(idx, tabs.length - 1);
+      loadTab(activeTab);
+      renderTabs();
+    }
+
+    /* === ORIGINAL ITEM LOGIC === */
+    var items = [];
+    function escHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
     function renderRows() {
       var tbody = document.getElementById('itemsBody');
       tbody.innerHTML = '';
@@ -369,7 +538,7 @@
       bindItemInputs();
       recalculate();
     }
-    function escHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
     function addRow() {
       items.push({ name: 'Nama Produk', price: 0, qty: 1, active: true });
       renderRows();
@@ -378,6 +547,7 @@
       items[idx].active = false;
       renderRows();
     }
+
     function bindItemInputs() {
       document.querySelectorAll('#itemsBody .edit-input').forEach(function(el) {
         el.addEventListener('input', function() {
@@ -394,6 +564,7 @@
         });
       });
     }
+
     function recalculate() {
       var subtotal = 0, qty = 0;
       items.forEach(function(item, i) {
@@ -415,6 +586,7 @@
       if (total < 0) total = 0;
       document.getElementById('payTotal').textContent = 'Rp' + dotFormat(total);
     }
+
     ['inputShipping', 'inputService', 'inputDiscount', 'inputVoucherDiscount'].forEach(function(id) {
       var el = document.getElementById(id);
       el.addEventListener('input', function() { recalculate(); });
@@ -423,7 +595,10 @@
         if (!isNaN(num)) this.value = dotFormat(num);
       });
     });
-    renderRows();
+
+    document.getElementById('inputDate').addEventListener('input', updateOrderPrefix);
+    document.getElementById('inputDate').addEventListener('blur', updateOrderPrefix);
+
     var shippingRates = { 'Regular': 12000, 'Instant': 18000, 'Same Day': 16500 };
     document.getElementById('selectShipping').addEventListener('change', function() {
       var rate = shippingRates[this.value] || 0;
@@ -431,6 +606,88 @@
       document.getElementById('inputDiscount').value = dotFormat(rate);
       recalculate();
     });
+
+    /* === INIT === */
+    (function() {
+      tabs.push(createDefaultTabState());
+      activeTab = 0;
+      loadTab(0);
+      renderTabs();
+    })();
+
+    /* === ACCUMULATION LOGIC === */
+    function renderAccumulation() {
+      saveCurrentTab();
+      var section = document.getElementById('accumSection');
+      if (tabs.length < 2) { section.style.display = 'none'; return; }
+      section.style.display = '';
+      document.getElementById('accumSubtitle').textContent = 'Total ' + tabs.length + ' nota';
+      var tbody = document.getElementById('accumBody');
+      tbody.innerHTML = '';
+      var globalNo = 0;
+      var grandSubtotal = 0, grandShipping = 0, grandService = 0, grandDiscount = 0, grandVoucher = 0, grandTotal = 0, grandQty = 0;
+
+      tabs.forEach(function(t, ti) {
+        var notaSubtotal = 0, notaQty = 0;
+        var activeItems = t.items.filter(function(it) { return it.active; });
+        activeItems.forEach(function(item, ii) {
+          globalNo++;
+          var sub = item.price * item.qty;
+          notaSubtotal += sub;
+          notaQty += item.qty;
+          var tr = document.createElement('tr');
+          tr.innerHTML =
+            '<td class="num">' + globalNo + '</td>' +
+            '<td>Nota ' + (ti + 1) + '</td>' +
+            '<td>' + escHtml(item.name) + '</td>' +
+            '<td class="price">Rp' + dotFormat(item.price) + '</td>' +
+            '<td class="num">' + item.qty + '</td>' +
+            '<td class="price">Rp' + dotFormat(sub) + '</td>';
+          tbody.appendChild(tr);
+        });
+        var ship = parseNumber(t.shipping) || 0;
+        var svc = parseNumber(t.service) || 0;
+        var disc = parseNumber(t.discount) || 0;
+        var vouc = parseNumber(t.voucherDiscount) || 0;
+        var notaTotal = notaSubtotal + ship + svc - disc - vouc;
+        if (notaTotal < 0) notaTotal = 0;
+        grandSubtotal += notaSubtotal;
+        grandShipping += ship;
+        grandService += svc;
+        grandDiscount += disc;
+        grandVoucher += vouc;
+        grandTotal += notaTotal;
+        grandQty += notaQty;
+
+        // nota summary row
+        var trSum = document.createElement('tr');
+        trSum.className = 'nota-header';
+        trSum.innerHTML =
+          '<td class="num" colspan="2">Nota ' + (ti + 1) + '</td>' +
+          '<td>Subtotal</td>' +
+          '<td class="price" colspan="2">' + notaQty + ' item</td>' +
+          '<td class="price">Rp' + dotFormat(notaTotal) + '</td>';
+        tbody.appendChild(trSum);
+      });
+
+      var summary = document.getElementById('accumSummary');
+      summary.innerHTML =
+        '<div class="sum-row"><span class="slabel">Total Subtotal Pesanan</span><span class="svalue">Rp' + dotFormat(grandSubtotal) + '</span></div>' +
+        '<div class="sum-row"><span class="slabel">Total Pengiriman</span><span class="svalue">Rp' + dotFormat(grandShipping) + '</span></div>' +
+        '<div class="sum-row"><span class="slabel">Total Biaya Layanan</span><span class="svalue">Rp' + dotFormat(grandService) + '</span></div>' +
+        '<div class="sum-row"><span class="slabel">Total Diskon Pengiriman</span><span class="svalue" style="color:#e74c3c;">-Rp' + dotFormat(grandDiscount) + '</span></div>' +
+        '<div class="sum-row"><span class="slabel">Total Diskon Voucher</span><span class="svalue" style="color:#e74c3c;">-Rp' + dotFormat(grandVoucher) + '</span></div>' +
+        '<div class="sum-row"><span class="slabel">Total Kuantitas</span><span class="svalue">' + grandQty + ' produk</span></div>' +
+        '<hr class="sum-divider">' +
+        '<div class="sum-total"><span class="slabel">Grand Total Pembayaran</span><span class="svalue">Rp' + dotFormat(grandTotal) + '</span></div>';
+    }
+
+    // Hook accumulation into existing functions
+    var _origRecalculate = recalculate;
+    recalculate = function() { _origRecalculate(); renderAccumulation(); };
+    var _origRenderTabs = renderTabs;
+    renderTabs = function() { _origRenderTabs(); renderAccumulation(); };
+    renderAccumulation();
   </script>
 </body>
 </html>
